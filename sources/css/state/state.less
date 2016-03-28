@@ -1,0 +1,39 @@
+.l-result.is-hidden {
+	display: none;
+}
+
+.result-column.is-hidden {
+	display: none;
+	width: 0%;
+}
+
+.result-column.is-wide {
+	width: 100%;
+	& .photo-box {
+		width: 23%;
+		&:nth-child(3n) {
+			margin-right: 2%;
+		}
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
+	}
+	& .result-list {
+		border-right: 0;
+	}
+}
+
+.navbutton.is-hidden {
+	left: -1000px;
+}
+
+.photo-box.is-animation {
+	animation: shrinkAnimation .3s 1;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+}
+
+@keyframes shrinkAnimation {
+	0% {transform: scale(1);}
+	100% {transform: scale(0);}
+}

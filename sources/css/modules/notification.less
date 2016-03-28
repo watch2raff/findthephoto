@@ -1,0 +1,18 @@
+.notification {
+	position: fixed;
+	top: -100px;
+	left: 50%;
+	z-index: 10;
+	width: auto;
+	padding: 15px 25px;
+	background: #E6E6E6;
+	text-align: center;
+	transform: translateX(-50%);
+	transition: top .25s ease-in-out 0s;
+	&--show {
+		top: 10px;
+	}
+	&--error {
+		background: rgba(255, 0, 0, .3);
+	}
+}

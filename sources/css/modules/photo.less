@@ -1,0 +1,53 @@
+.photo-box {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 32%;
+	margin: 0 2% 20px 0;
+	&:nth-child(3n) {
+		margin-right: 0;
+	}
+}
+
+.photo {
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+	margin: 0;
+}
+
+.photo-button {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	padding: 10px;
+	opacity: 0;
+	background: rgba(0,0,0, .7);
+	color: #fff;
+	font-weight: 600;
+	font-size: 14px;
+	transition: opacity .35s ease-in-out 0s;
+	text-decoration: none;
+}
+.photo-box:hover .photo-button, .photo-box:focus .photo-button {
+	opacity: 1;
+	text-decoration: none;
+}
+
+@media screen and (max-width: @tablet) {
+	.photo-box {
+		width: 48%;
+		margin-right: 2%;
+		&:nth-child(3n) {
+			margin-right: 2%;
+		}
+	}
+	
+}
+
+@media screen and (max-width: @phone-landscape) {
+	.photo-box {
+		width: 100%;
+		margin-right: 0;
+	}
+}

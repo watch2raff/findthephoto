@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<base href="assets/">
+	<meta charset="UTF-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta content="DESCRIPTION" name="description">
+	
+	<title>FindThePhoto</title>
+	<link href='css/app.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class="notification js-notification">
+		<span class="notification__text js-notificationText"></span>
+	</div>
+	
+	<section class="l-gallery">
+		<h1 class="h1-title">FindThePhoto</h1>
+		<form class="search js-search">
+			<div class="preloader js-preloader">
+				<img class="preloader__elem" src="images/preloader.gif" alt="" />
+			</div>
+			<input type="text" class="search__input js-searchInput" placeholder="Enter the name photo">
+			<button class="search__button" type="submit">Search</button>
+		</form>
+		<div class="l-result is-hidden js-result">
+			<div class="result-column js-resultPhoto">
+				<h2 class="h2-title">Results</h2>
+				<div class="result-list js-resultList"></div>
+			</div>
+			<div class="result-column js-favorites">
+				<h2 class="h2-title">Favorites</h2>
+				<div id="dragList" class="favorites js-favoritesList"></div>
+			</div>
+		</div>
+	</section>
+	<a class="navbutton is-hidden js-navButton" href="javascript:;" >Вверх</a>
+	
+	<script type="text/html" id="templateResultList">
+		<%_.each(items, function(item, key){ %>
+			<figure class="photo-box">
+				<a class="photo-button add js-favoritesButton" href="javascript:;" data-type="add" data-id="<%= item.id %>" >favorites</a>
+				<a class="photo-button remove js-favoritesButton" href="javascript:;" data-type="remove" data-id="<%= item.id %>" >remove</a>
+				<img src="<%= item.photo_604 %>" alt="" class="photo" />
+			</figure>
+		<%});%>
+	</script>
+	
+	<script src="js/lib/jquery-2.2.1.min.js"></script>
+
+	<!--[if lt IE 10]>
+		<script src="scripts/lib/flexibility.js"></script>
+	<![endif]-->
+	<script src="js/lib/underscore.js"></script>
+	<script src="js/lib/Sortable.min.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/Favorites.js"></script>
+	<script src="js/Notification.js"></script>
+	<script src="js/Search.js"></script>
+	<script src="js/NavButton.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
+
