@@ -1,7 +1,5 @@
 # findthephoto
 
-Тестовое задание для компании iFunny.
-
 ### Исходники:
 
 /sources
